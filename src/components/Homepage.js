@@ -24,6 +24,7 @@ class Homepage extends Component {
         const {classes} = this.props;
         return (
             <div className="homepage-container">
+                This is a homepage. 
                 <div className="logo">This is a logo</div>
                 <Button variant="outlined"  onClick={this.handleSignup} color="secondary" className={classes.button}>Sign up</Button>
                 <Button variant="outlined" onClick={this.handleLogin} color="primary" className={classes.button}>Login</Button>
