@@ -34,8 +34,8 @@ class Login extends Component {
     }
 
     handleSubmit = () => {
-        // redirect to homepage 
-        this.props.history.push("/");
+        // redirect to dashboard
+        this.props.history.push("/dashboard");
     }
 
     render() {

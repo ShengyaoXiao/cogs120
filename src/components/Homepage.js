@@ -28,7 +28,7 @@ class Homepage extends Component {
                 <Button variant="outlined"  onClick={this.handleSignup} color="secondary" className={classes.button}>Sign up</Button>
                 <Button variant="outlined" onClick={this.handleLogin} color="primary" className={classes.button}>Login</Button>
             </div>
-        )
+        );
     }
 }
 
