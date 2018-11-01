@@ -43,7 +43,7 @@ class Login extends Component {
         return (
             <div className="login-container">
                  <div className="login-title">Login</div>
-                 <form className={classes.container} noValidate autoComplete="off" onSubmit={this.handleSubmit}> 
+                 <form className={classes.container} noValidate autoComplete="off" > 
                  <TextField
                     id="name-input"
                     label="Username or Email Address"
@@ -67,7 +67,7 @@ class Login extends Component {
                     // onChange={this.handlePasswordInput('password')}
                     // error={this.state.passwordError}
                 />
-                 <Button type="submit" variant="contained" color="primary" className={classes.button}>
+                 <Button type="button" variant="contained" color="primary" onClick={this.handleSubmit}className={classes.button}>
                     Login 
                 </Button>
                 </form>

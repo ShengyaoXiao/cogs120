@@ -14,6 +14,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import './stats.css';
 import monsterDemo from '../imgs/monster.gif';
+import Collection from './common/Collection';
 
 const option = {
     title: {
@@ -88,10 +89,17 @@ class Stats extends Component {
         const { classes } = this.props;
         return (
             <div className="stats-container">
-                <div className="stats-profile-container">
-                    <img src={monsterDemo} alt="monster"/>
-                    <div className="progress-bar">
-                    <span>EXP: </span><progress value="38" max="50"></progress><span>Lv 38</span>
+                <br/><br/><br/><br/>
+                <div className="row1">
+                    <div className="stats-profile-container">
+                        <img src={monsterDemo} alt="monster"/>
+                        <div className="progress-bar">
+                        <span>EXP: </span><progress value="38" max="50"></progress><span>Lv 38</span>
+                        </div>
+                    </div>
+                    <div className="stats-info-container">
+                        <div>Name: Yoshi</div>
+                        <div>Type: Fighting</div>
                     </div>
                 </div>
                 <div className="row2">
@@ -132,6 +140,9 @@ class Stats extends Component {
                     </div>
                 </div>
                 <div className="row3">
+                <div className="stats-collection-container">
+                    <Collection />
+                </div>
                 <Paper className={classes.root}>
                     <List component="nav">
                         <ListItem>

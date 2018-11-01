@@ -43,7 +43,7 @@ class Register extends Component {
         return (
             <div className="register-container">
                  <div className="register-title">Create Your Account</div>
-                 <form className={classes.container} noValidate autoComplete="off" onSubmit={this.handleSubmit}> 
+                 <form className={classes.container} noValidate autoComplete="off" > 
                  <TextField
                     id="name-input"
                     label="Username"
@@ -91,7 +91,7 @@ class Register extends Component {
                     // onChange={this.handlePasswordConfirm('confirmPassword')}
                     // error={this.state.confirmPasswordError}
                 />
-                 <Button type="submit" variant="contained" color="primary" className={classes.button}>
+                 <Button type="button" variant="contained" color="primary" className={classes.button} onClick={this.handleSubmit}>
                     Sign up
                 </Button>
                 </form>
