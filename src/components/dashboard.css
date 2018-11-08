@@ -6,6 +6,7 @@
 
     /* width: 100px;
     height: 100px; */
+    color: #FE4a49;
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 
     border-radius: 18px;
@@ -20,4 +21,7 @@
     align-items: center;
     justify-content: space-between;
     flex-flow: wrap;
+}
+.dashboard-container {
+    color: #d8d8d0
 }
