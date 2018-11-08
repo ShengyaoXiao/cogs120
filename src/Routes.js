@@ -10,11 +10,9 @@ import Challenge from './components/Challenge';
 import Battle from './components/Battle';
 import Friends from './components/Friends';
 import Setting from './components/Setting';
-<<<<<<< HEAD
-import BattleRendering from './components/BattleRendering';
-=======
 import Card from './components/Card'
->>>>>>> fb33519b5e4469861ad3807a48b961a4129bfe5e
+import BattleRendering from './components/BattleRendering';
+
 export default () =>
     <BrowserRouter>
         <div>
