@@ -1,0 +1,13 @@
+
+.battle-container {
+    color: #d8d8d0
+}
+.row1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.HP-bar {
+    display: flex;
+    flex-direction: row;
+}

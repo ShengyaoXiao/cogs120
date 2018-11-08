@@ -10,6 +10,7 @@ import Challenge from './components/Challenge';
 import Battle from './components/Battle';
 import Friends from './components/Friends';
 import Setting from './components/Setting';
+import BattleRendering from './components/BattleRendering';
 export default () =>
     <BrowserRouter>
         <div>
@@ -17,6 +18,7 @@ export default () =>
             <Switch>
                 <Route path = "/" exact component = {Homepage} />
                 <Route path = "/dashboard" component = {Dashboard} />
+                <Route path = "/BattleRendering" component = {BattleRendering} />
                 <Route path = "/stats" component = {Stats} />
                 <Route path = "/challenge" component = {Challenge} />
                 <Route path = "/battle" component = {Battle} />
