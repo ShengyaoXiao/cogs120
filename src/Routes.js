@@ -10,7 +10,11 @@ import Challenge from './components/Challenge';
 import Battle from './components/Battle';
 import Friends from './components/Friends';
 import Setting from './components/Setting';
+<<<<<<< HEAD
 import BattleRendering from './components/BattleRendering';
+=======
+import Card from './components/Card'
+>>>>>>> fb33519b5e4469861ad3807a48b961a4129bfe5e
 export default () =>
     <BrowserRouter>
         <div>
@@ -26,6 +30,7 @@ export default () =>
                 <Route path = "/login" component = {Login} />
                 <Route path = "/register" component = {Register} />
                 <Route path = "/setting" component = {Setting} />
+                <Route path = "/card" component = {Card} />
             </Switch>
         </div>
     </BrowserRouter>;
