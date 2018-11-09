@@ -35,6 +35,19 @@ const styles = theme => ({
 
 class BattleRendering extends Component {
 
+    state = {
+        attack:50,
+    };
+    handleAttack = event => {
+        var temp = this.state.attack -10;
+        if(temp>0){
+        this.setState ({attack: temp});
+        }
+        else{
+            this.props.history.push('/card');       
+        }
+    };
+
     render() {
         const { classes } = this.props;
 
@@ -46,9 +59,14 @@ class BattleRendering extends Component {
                 <div className="row1">
                     <Card className={classes.card}>
                         <CardActionArea>
-                            <img src={strong} alt="strong" />
-                            <div className="HP-bar">
-                                <span>Your HP: </span><progress value="50" max="50"></progress>
+                            <div className="bar-container">
+                            <div className="HP-bar1">
+                                <span>Opponent HP: </span><progress value= {this.state.attack} max="50"></progress>
+                            </div>
+                            </div>
+                            <img src={monsterDemo} alt="monster" />
+                            <div className="HP-bar2">
+                                <span>Your HP: </span><progress value= "50" max="50"></progress>
                             </div>
                             <CardContent>
                                 <Typography gutterBottom variant="h6" component="h2">
@@ -57,9 +75,9 @@ class BattleRendering extends Component {
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
-                            <Button size="small" color="primary">
+                            <Button size="small" color="primary" onClick = {this.handleAttack}>
                                 attack
-                                <Button onClick = {this.attack}></Button>
+                                
                             </Button>
                             <Button size="small" color="primary">
                                 skip
