@@ -28,7 +28,7 @@ export default () =>
                 <Route path = "/login" component = {Login} />
                 <Route path = "/register" component = {Register} />
                 <Route path = "/setting" component = {Setting} />
-                <Route path = "/card" component = {Card} />
+                <Route path = "/Card" component = {Card} />
             </Switch>
         </div>
     </BrowserRouter>;
