@@ -64,7 +64,7 @@ class Login extends Component {
         const {classes} = this.props;
         return (
             <div className="login-container">
-                 <div className="login-title">Login</div>
+                 <div className="login-title" style={{textAlign: 'center'}}>Login</div>
                  <form className={classes.container} noValidate autoComplete="off" > 
                  <TextField
                     id="name-input"
