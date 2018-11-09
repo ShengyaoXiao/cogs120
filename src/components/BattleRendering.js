@@ -14,7 +14,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import monsterDemo from '../imgs/monster.gif';
+import strong from '../imgs/strong.gif';
 const styles = theme => ({
     root: {
         flexGrow: 1,
@@ -46,7 +46,7 @@ class BattleRendering extends Component {
                 <div className="row1">
                     <Card className={classes.card}>
                         <CardActionArea>
-                            <img src={monsterDemo} alt="monster" />
+                            <img src={strong} alt="strong" />
                             <div className="HP-bar">
                                 <span>Your HP: </span><progress value="50" max="50"></progress>
                             </div>

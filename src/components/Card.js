@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
@@ -79,17 +80,17 @@ const styles = theme => ({
 
 const images = [
   {
-    src: '../imgs/cardback.jpg',
+    url: '../imgs/cardback.jpg',
     title: 'Card 1',
     width: '30%',
   },
   {
-    url: '/static/images/grid-list/burgers.jpg',
+    url: '/static/imgs/cardback.jpg',
     title: 'Card 2',
     width: '30%',
   },
   {
-    url: '/static/images/grid-list/camera.jpg',
+    url: '/static/imgs/cardback.jpg',
     title: 'Card 3',
     width: '30%',
   },
@@ -97,8 +98,8 @@ const images = [
 
 function ButtonBases(props) {
   const { classes } = props;
-
   return (
+    <Link to="./challenge">
     <div className={classes.root}>
       {images.map(image => (
         <ButtonBase
@@ -113,24 +114,27 @@ function ButtonBases(props) {
           <span
             className={classes.imageSrc}
             style={{
-              backgroundImage: `src(${image.src})`,
+              backgroundImage: `url(${image.url})`,
             }}
           />
+          <img src = {cardback} alt="cardback"/>
           <span className={classes.imageBackdrop} />
-          <span className={classes.imageButton}>
-            <Typography
-              component="span"
-              variant="subtitle1"
-              color="inherit"
-              className={classes.imageTitle}
-            >
+            <span className={classes.imageButton}>
+              <Typography
+                component="span"
+                variant="subtitle1"
+                color="inherit"
+                className={classes.imageTitle}
+              >
               {image.title}
               <span className={classes.imageMarked} />
             </Typography>
           </span>
         </ButtonBase>
+        
       ))}
     </div>
+    </Link>
   );
 }
 
