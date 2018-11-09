@@ -77,7 +77,7 @@ render() {
                     <i className="fas fa-chart-bar"></i>
                 </Button> 
             </Link>
-            <Link to="./battle">
+            <Link to="./battleRendering">
                 <Button variant="fab" disabled aria-label="battle" className={classes.button}>
                     <i className="fas fa-gamepad"></i>
                 </Button>
@@ -100,7 +100,7 @@ render() {
                     <i className="fas fa-chart-bar"></i>
                 </Button> 
             </Link>
-            <Link to="./battle">
+            <Link to="./battleRendering">
                 <Button variant="fab" disabled aria-label="battle" className={classes.button}>
                     <i className="fas fa-gamepad"></i>
                 </Button>
@@ -121,7 +121,7 @@ render() {
                     <i className="fas fa-chart-bar"></i>
                 </Button> 
             </Link>
-            <Link to="./battle">
+            <Link to="./battleRendering">
                 <Button variant="fab" disabled aria-label="battle" className={classes.button}>
                     <i className="fas fa-gamepad"></i>
                 </Button>
@@ -143,7 +143,7 @@ render() {
                     <i className="fas fa-chart-bar"></i>
                 </Button> 
             </Link>
-            <Link to="./battle">
+            <Link to="./battleRendering">
                 <Button variant="fab" disabled aria-label="battle" className={classes.button}>
                     <i className="fas fa-gamepad"></i>
                 </Button>
