@@ -48,7 +48,7 @@ const styles = {
               <AppBar position = 'fixed'>
                   <Toolbar>
                         <Dropdown />
-                        <Typography className="app-title" variant = 'title'>
+                        <Typography className="app-title" variant = 'title' >
                             Budokan 
                         </Typography>
                   </Toolbar>

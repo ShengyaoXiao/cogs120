@@ -29,11 +29,33 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            username: '',
+            password: '',
+            status: false 
         };
     }
 
+    componentWillMount() {
+        if(localStorage.getItem('username') !== '') {
+            this.setState({username: localStorage.getItem('username')});
+        }
+    }
+
+    handleUsernameInput = name => event => {
+        this.setState({username: event.target.value});
+    }
+
+    handlePasswordInput = email => event => {
+        this.setState({password: event.target.value});
+    }
+
+    checkButtonStatus = () => {
+        return (this.state.username === '') || (this.state.password === '');
+    }
+
     handleSubmit = () => {
+        // set localStorage 
+        localStorage.setItem('username', this.state.username);
         // redirect to dashboard
         this.props.history.push("/dashboard");
     }
@@ -46,13 +68,13 @@ class Login extends Component {
                  <form className={classes.container} noValidate autoComplete="off" > 
                  <TextField
                     id="name-input"
-                    label="Username or Email Address"
+                    label="Username"
                     className={classes.textField}
-                    // value={this.state.username}
-                    // onChange={this.handleNameInput('username')}
+                    value={this.state.username}
                     margin="normal"
                     variant="outlined"
                     required={true}
+                    onChange={this.handleUsernameInput('username')}
                 />
             
                 <TextField
@@ -63,11 +85,11 @@ class Login extends Component {
                     margin="normal"
                     variant="outlined"
                     required={true}
-                    // value={this.state.password}
-                    // onChange={this.handlePasswordInput('password')}
+                    value={this.state.password}
                     // error={this.state.passwordError}
+                    onChange={this.handlePasswordInput('password')}
                 />
-                 <Button type="button" variant="contained" color="primary" onClick={this.handleSubmit}className={classes.button}>
+                 <Button disabled={this.checkButtonStatus()} type="button" variant="contained" color="primary" onClick={this.handleSubmit}className={classes.button}>
                     Login 
                 </Button>
                 </form>

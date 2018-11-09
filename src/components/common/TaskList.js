@@ -9,7 +9,6 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom'
-import challengeimg from '../imgs/challenge.jpg';
 const styles = theme => ({
   root: {
     width: '100%',
@@ -46,7 +45,7 @@ class CheckboxListSecondary extends React.Component {
       <div className={classes.root}>
         <List dense>
             <ListItem challenge_1>
-              <Avatar alt="challenge" src={challengeimg}/>
+              <Avatar alt="challenge" src="challenge.jpg" />
               <ListItemText primary={`Challenge 1: Push Up * 30`} />
               <ListItemSecondaryAction>
                 <Checkbox
@@ -54,7 +53,7 @@ class CheckboxListSecondary extends React.Component {
               </ListItemSecondaryAction>
             </ListItem>
             <ListItem challenge_2>
-              <Avatar alt="challenge" src={challengeimg} />
+              <Avatar alt="challenge" src="challenge.jpg" />
               <ListItemText primary={`Challenge 2: Pull Up * 30`} />
               <ListItemSecondaryAction>
                 <Checkbox
@@ -62,7 +61,7 @@ class CheckboxListSecondary extends React.Component {
               </ListItemSecondaryAction>
             </ListItem>
             <ListItem challenge_2>
-              <Avatar alt="challenge" src={challengeimg} />
+              <Avatar alt="challenge" src="challenge.jpg" />
               <ListItemText primary={`Challenge 3: Pull Up * 30`} />
               <ListItemSecondaryAction>
                 <Checkbox id = "checkbox3"
@@ -71,9 +70,10 @@ class CheckboxListSecondary extends React.Component {
             </ListItem>
         </List>
         <Link to="./stats">
-                <Button>
-                    Confirm       
-                </Button>
+                        <Button>
+                            Confirm
+                            
+                        </Button>
         </Link>
       </div>
       
