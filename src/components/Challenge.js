@@ -44,6 +44,7 @@ class CheckboxListSecondary extends React.Component {
 
     return (
       <div className={classes.root}>
+      Check off the tasks that you have completed
         <List dense>
             <ListItem challenge_1>
               <Avatar alt="challenge" src={challengeimg}/>
@@ -70,7 +71,7 @@ class CheckboxListSecondary extends React.Component {
               </ListItemSecondaryAction>
             </ListItem>
         </List>
-        <Link to="./stats">
+        <Link to="./card">
                 <Button>
                     Confirm       
                 </Button>

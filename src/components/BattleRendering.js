@@ -14,7 +14,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import monsterDemo from '../imgs/monster.gif';
+import strong from '../imgs/strong.gif';
 const styles = theme => ({
     root: {
         flexGrow: 1,
@@ -44,7 +44,7 @@ class BattleRendering extends Component {
         this.setState ({attack: temp});
         }
         else{
-            this.props.history.push('/challenge');       
+            this.props.history.push('/card');       
         }
     };
 
