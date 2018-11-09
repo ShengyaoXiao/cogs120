@@ -146,9 +146,6 @@ class Stats extends Component {
                 <Paper className={classes.root}>
                     <List component="nav">
                         <ListItem>
-                            {/* <ListItemIcon>
-                        
-                            </ListItemIcon> */}
                             <ListItemText primary="Chelsea Otakan" />
                         </ListItem>
                         <ListItem>
