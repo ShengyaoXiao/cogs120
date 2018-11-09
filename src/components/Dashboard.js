@@ -12,7 +12,8 @@ class Dashboard extends Component {
     render() {
         return (
             <div className="dashboard-container">
-                This is a dashboard page.
+                Hello, {localStorage.getItem("username")}! <br/>
+                Feed your little monster by completing your daily tasks! 
                 <div className="dashboard-profile">
                     <img src={monsterDemo} alt="monster"/>
                     <div className="progress-bar">

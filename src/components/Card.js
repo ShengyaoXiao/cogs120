@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 import cardback from '../imgs/cardback.jpg';
+import Modal from '@material-ui/core/Modal';
+import Ring from '../imgs/item-icons/ring.png';
+import Button from '@material-ui/core/Button';
+
 const styles = theme => ({
   root: {
     display: 'flex',
@@ -76,6 +80,13 @@ const styles = theme => ({
     left: 'calc(50% - 9px)',
     transition: theme.transitions.create('opacity'),
   },
+  paper: {
+    position: 'absolute',
+    width: theme.spacing.unit * 50,
+    backgroundColor: theme.palette.background.paper,
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing.unit * 4,
+  },
 });
 
 const images = [
@@ -96,16 +107,79 @@ const images = [
   },
 ];
 
-function ButtonBases(props) {
-  const { classes } = props;
+
+
+class ButtonBases extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+       showModal: false
+    };
+  }
+  
+  handleClick = () => {
+    this.setState({showModal: true});
+  }
+
+  handleClose = () => {
+    this.setState({ showModal: false });
+  };
+  
+  toStats = () => {
+    this.props.history.push('/stats');
+  }
+  getModalStyle() {
+    const top = 50;
+    const left = 50;
+  
+    return {
+      top: `${top}%`,
+      left: `${left}%`,
+      transform: `translate(-${top}%, -${left}%)`,
+    };
+  }
+
+  render() {
+  const { classes } = this.props;
   return (
     <div className="root">
       <div>
-      Please pick a card.
+      Now you have a chance to draw a card!
       </div>
       <div>
-        <Link to="./challenge">
-        {images.map(image => (
+      <Modal
+          aria-labelledby="simple-modal-title"
+          aria-describedby="simple-modal-description"
+          open={this.state.showModal}
+          onClose={this.handleClose}
+          disableBackdropClick={true}
+        >
+          <div style={this.getModalStyle()} className={classes.paper}>
+            <div 
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+              <Typography variant="h6" id="modal-title">
+              Congratulations!!
+              </Typography>
+              <Typography variant="subtitle1" id="simple-modal-description">
+                You got a lengendary weapon: Silver Ring!
+              </Typography>
+              <img src = {Ring} alt="card-weapon"/>
+              <span>Luck + 18 and Speed + 6</span>
+              <Button color="primary" onClick={this.toStats}>Check out your new weapon in your collection!</Button>
+            </div>
+          </div>
+        </Modal>
+      {
+        this.state.showModal 
+        ?
+        <div></div>
+        :
+        images.map(image => (
           <ButtonBase
             focusRipple
             key={image.title}
@@ -114,6 +188,7 @@ function ButtonBases(props) {
             style={{
               width: image.width,
             }}
+            onClick={this.handleClick}
           >
             <span
               className={classes.imageSrc}
@@ -121,29 +196,30 @@ function ButtonBases(props) {
                 backgroundImage: `url(${image.url})`,
               }}
             />
-            <img src = {cardback} alt="cardback"/>
-            <span className={classes.imageBackdrop} />
+            <img src = {cardback} alt="cardback"  style={{marginLeft:'60px '}}/>
+            <span style={{marginLeft:'60px '}} className={classes.imageBackdrop} />
               <span className={classes.imageButton}>
                 <Typography
                   component="span"
                   variant="subtitle1"
                   color="inherit"
                   className={classes.imageTitle}
+                  style={{marginLeft:'60px '}}
                 >
                 {image.title}
-                <span className={classes.imageMarked} />
+                <span className={classes.imageMarked}/>
               </Typography>
             </span>
           </ButtonBase>
           
-        ))}
-        </Link>
+        ))
+      }
         </div>
     </div>
     
   );
 }
-
+}
 ButtonBases.propTypes = {
   classes: PropTypes.object.isRequired,
 };
