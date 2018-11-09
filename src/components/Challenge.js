@@ -70,7 +70,7 @@ class CheckboxListSecondary extends React.Component {
               </ListItemSecondaryAction>
             </ListItem>
         </List>
-        <Link to="./stats">
+        <Link to="./card">
                 <Button>
                     Confirm       
                 </Button>
