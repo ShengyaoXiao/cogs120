@@ -118,8 +118,7 @@ class Collection extends Component{
         if(localStorage.getItem('items') !== undefined){
             let storedItems = JSON.parse(localStorage.getItem("items"));
             this.setState({newItems: storedItems});
-        }
-        
+        }        
     }
 
     handleOpen = () => {

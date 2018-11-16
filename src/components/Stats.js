@@ -87,7 +87,13 @@ class Stats extends Component {
     
     render() {
         const { classes } = this.props;
-        const {name} = this.props.location.state
+        // const {name} = this.props.location.state
+ 
+        // if(this.props.location.state !== undefined) {
+        //     const {name} = this.props.location.state;
+        // } else {
+        //     let name  = localStorage.getItem("username");
+        // }
         return (
             <div className="stats-container">
                 <br/><br/><br/><br/>
@@ -99,7 +105,7 @@ class Stats extends Component {
                         </div>
                     </div>
                     <div className="stats-info-container">
-                        <div>Name: {name}'s pet</div>
+                        <div>Name: {localStorage.getItem("username")}'s pet</div>
                         <div>Type: Fighting</div>
                     </div>
                 </div>
