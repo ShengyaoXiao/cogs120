@@ -72,12 +72,12 @@ render() {
                 className={classes.avatar}>J
             </Avatar>
             <ListItemText primary="Jeff" secondary="Jan 9, 2014" />
-            <Link to="./stats">
+            <Link to={{ pathname: './stats', state: { name: 'Jeff'} }}>
                 <Button variant="fab" disabled aria-label="stats" className={classes.button}>
                     <i className="fas fa-chart-bar"></i>
                 </Button> 
             </Link>
-            <Link to="./battleRendering">
+            <Link to={{ pathname: './battleRendering', state: { name: 'Jeff'} }}>
                 <Button variant="fab" disabled aria-label="battle" className={classes.button}>
                     <i className="fas fa-gamepad"></i>
                 </Button>
@@ -95,12 +95,12 @@ render() {
                 className={classes.orangeAvatar}>T
             </Avatar>
             <ListItemText primary="Tom" secondary="Jan 7, 2014" />
-            <Link to="./stats">
+            <Link to={{ pathname: './stats', state: { name: 'Tom'} }}>
                 <Button variant="fab" disabled aria-label="stats" className={classes.button}>
                     <i className="fas fa-chart-bar"></i>
                 </Button> 
             </Link>
-            <Link to="./battleRendering">
+            <Link to={{ pathname: './battleRendering', state: { name: 'Tom'} }}>
                 <Button variant="fab" disabled aria-label="battle" className={classes.button}>
                     <i className="fas fa-gamepad"></i>
                 </Button>
@@ -116,12 +116,12 @@ render() {
             className={classes.purpleAvatar}>J
           </Avatar>
           <ListItemText primary="Jack" secondary="July 20, 2014" />
-          <Link to="./stats">
+          <Link to={{ pathname: './stats', state: { name: 'Jack'} }}>
                 <Button variant="fab" disabled aria-label="stats" className={classes.button}>
                     <i className="fas fa-chart-bar"></i>
                 </Button> 
             </Link>
-            <Link to="./battleRendering">
+            <Link to={{ pathname: './battleRendering', state: { name: 'Jack'} }}>
                 <Button variant="fab" disabled aria-label="battle" className={classes.button}>
                     <i className="fas fa-gamepad"></i>
                 </Button>
@@ -138,12 +138,12 @@ render() {
             className={classes.avatar}>PG
           </Avatar>
           <ListItemText primary="Philip Guo" secondary="July 20, 2014" />
-          <Link to="./stats">
+          <Link to={{ pathname: './stats', state: { name: 'Philip Guo'} }}>
                 <Button variant="fab" disabled aria-label="stats" className={classes.button}>
                     <i className="fas fa-chart-bar"></i>
                 </Button> 
             </Link>
-            <Link to="./battleRendering">
+            <Link to={{ pathname: './battleRendering', state: { name: 'Philip Guo'} }}>
                 <Button variant="fab" disabled aria-label="battle" className={classes.button}>
                     <i className="fas fa-gamepad"></i>
                 </Button>

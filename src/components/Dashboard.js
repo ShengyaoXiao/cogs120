@@ -31,7 +31,7 @@ class Dashboard extends Component {
                         </Typography>
                         </div>
                     </Link>
-                    <Link to="./stats">
+                    <Link to={{ pathname: './Stats', state: { name: 'player'} }}>
                         <span className="icon"> 
                             <i className="fas fa-chart-bar"></i>
                         </span>

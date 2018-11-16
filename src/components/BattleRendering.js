@@ -64,12 +64,13 @@ class BattleRendering extends Component {
 
     render() {
         const { classes } = this.props;
+        const {name} = this.props.location.state
 
 
         return (
 
             <div className="battle-container">
-                this is battle
+                Battle with {name} 
                 <div className="row1">
                     <Card className={classes.card}>
                         <CardActionArea>
@@ -82,11 +83,7 @@ class BattleRendering extends Component {
                             <div className="HP-bar2">
                                 <span>Your HP: </span><progress value="50" max="50"></progress>
                             </div>
-                            <CardContent>
-                                <Typography gutterBottom variant="h6" component="h2">
-                                    You are battling with Tom
-                                </Typography>
-                            </CardContent>
+
                         </CardActionArea>
                         <CardActions>
                             <Button size="small" color="primary" onClick={this.handleAttack}>
