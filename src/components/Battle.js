@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom'
 
 const styles = theme => ({
   button: {
@@ -26,7 +27,9 @@ class Battle extends Component {
             <div className="homepage-container">
                 This is a Battle. 
                 <div className="logo">Choose a random battle or battle with friends</div>
-                <Button variant="outlined"  onClick={this.handleRandom} color="secondary" className={classes.button}>Random battle</Button>
+                <Link to={{ pathname: './battleRendering', state: { name: 'a Random Player'} }}>
+                <Button variant="outlined" color="secondary" className={classes.button}>Random battle</Button>
+                </Link>
                 <Button variant="outlined" onClick={this.handleFriends} color="primary" className={classes.button}>Friends battle</Button>
             </div>
         );

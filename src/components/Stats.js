@@ -87,6 +87,7 @@ class Stats extends Component {
     
     render() {
         const { classes } = this.props;
+        const {name} = this.props.location.state
         return (
             <div className="stats-container">
                 <br/><br/><br/><br/>
@@ -98,7 +99,7 @@ class Stats extends Component {
                         </div>
                     </div>
                     <div className="stats-info-container">
-                        <div>Name: Yoshi</div>
+                        <div>Name: {name}'s pet</div>
                         <div>Type: Fighting</div>
                     </div>
                 </div>
