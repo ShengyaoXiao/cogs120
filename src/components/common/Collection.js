@@ -16,8 +16,6 @@ import scroll from '../../imgs/item-icons/scroll.png';
 import shield from '../../imgs/item-icons/shield.png';
 import leather from '../../imgs/item-icons/studded-leather.png';
 import tunic from '../../imgs/item-icons/tunic.png';
-import Modal from '@material-ui/core/Modal';
-
 function rand() {
     return Math.round(Math.random() * 20) - 10;
   }
@@ -57,7 +55,7 @@ const styles = theme => ({
   },
 });
 
-const tileData = [{
+var tileData = [{
         img: necklace,
         title: 'Necklace'
     },
@@ -112,9 +110,17 @@ class Collection extends Component{
         super(props);
         this.state = {
             open: false,
+            newItems: null
         };
     }
 
+    componentWillMount() {
+        if(localStorage.getItem('items') !== undefined){
+            let storedItems = JSON.parse(localStorage.getItem("items"));
+            this.setState({newItems: storedItems});
+        }
+        
+    }
 
     handleOpen = () => {
         this.setState({
@@ -131,6 +137,10 @@ class Collection extends Component{
 
     render() {
         const { classes } = this.props;
+        if(this.state.newItems !== null) {
+            console.log("here");
+            tileData = tileData.concat(this.state.newItems);
+        }
         return (
             <div className={classes.root}>
             <GridList cellHeight={100} className={classes.gridList} cols={3}>

@@ -6,8 +6,12 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 import cardback from '../imgs/cardback.jpg';
 import Modal from '@material-ui/core/Modal';
-import Ring from '../imgs/item-icons/ring.png';
 import Button from '@material-ui/core/Button';
+import shield from '../imgs/item-icons/shield.png';
+import leather from '../imgs/item-icons/studded-leather.png';
+import tunic from '../imgs/item-icons/tunic.png';
+
+const pics = [shield, tunic, leather]; 
 
 const styles = theme => ({
   root: {
@@ -113,10 +117,35 @@ class ButtonBases extends Component {
   constructor(props){
     super(props);
     this.state = {
-       showModal: false
+       showModal: false,
+       chosenCard: '', 
+       title: '', 
+       img: ''
     };
   }
   
+  componentWillMount() {
+    let num = Math.floor(Math.random() * 3); 
+    this.setState({chosenCard: pics[num]});
+    if(num === 0) {
+      this.setState({
+        title: 'Magic Shield',
+        img: shield
+      })
+    } else if(num === 1) {
+      this.setState({
+        title: 'Golen Tunic',
+        img: tunic 
+      })
+    } else {
+      this.setState({
+        title: 'Super Leather',
+        img: leather
+      })
+    }
+   
+  }
+
   handleClick = () => {
     this.setState({showModal: true});
   }
@@ -126,8 +155,16 @@ class ButtonBases extends Component {
   };
   
   toStats = () => {
+    var storedItems = [];
+    if(localStorage.getItem('items') !== null){
+      storedItems = JSON.parse(localStorage.getItem("items"));
+    }
+    storedItems.push({img: this.state.img, title: 'new'});
+    localStorage.setItem("items", JSON.stringify(storedItems));
+
     this.props.history.push('/stats');
   }
+  
   getModalStyle() {
     const top = 50;
     const left = 50;
@@ -166,10 +203,16 @@ class ButtonBases extends Component {
               Congratulations!!
               </Typography>
               <Typography variant="subtitle1" id="simple-modal-description">
-                You got a lengendary weapon: Silver Ring!
+                You got a lengendary weapon: {this.state.title}
               </Typography>
-              <img src = {Ring} alt="card-weapon"/>
-              <span>Luck + 18 and Speed + 6</span>
+              <img src = {this.state.chosenCard} alt="card-weapon"/>
+              {
+                this.state.chosenCard === tunic ?
+                <span>Luck + 18 and Speed + 6</span> :
+                this.state.chosenCard === leather ?
+                <span>Attack + 10 and Speed + 2</span> :
+                <span>Defend + 13 and Luck + 17</span> 
+              }
               <Button color="primary" onClick={this.toStats}>Check out your new weapon in your collection!</Button>
             </div>
           </div>
