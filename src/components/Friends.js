@@ -26,20 +26,7 @@ class Friends extends Component {
                     <div className="friends-list">
                         <Friendlist />
                     </div>
-                    <div className="friends-container-1">
-                        <div className="search-friend">
-                            <Search />
-                            
-                        </div>
-
-                        <Grid container justify="center">
-                            <Grid item>
-                                <Tooltip title="Add" placement="right-start">
-                                    <Button>Add Friend</Button>
-                                </Tooltip>
-                            </Grid>
-                        </Grid>
-                    </div>
+                  
                 </div>
             </div>
         );

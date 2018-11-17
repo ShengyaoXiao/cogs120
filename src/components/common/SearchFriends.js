@@ -163,6 +163,8 @@ class IntegrationAutosuggest extends React.Component {
     this.setState({
       [name]: newValue,
     });
+    var friend = newValue;
+    localStorage.setItem("friend",JSON.stringify(friend));
   };
 
   render() {
