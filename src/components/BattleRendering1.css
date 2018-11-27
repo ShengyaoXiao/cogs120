@@ -1,3 +1,4 @@
+
 .battle-container {
     color: #d8d8d0
 }
@@ -13,4 +14,12 @@
 .HP-bar{
     display: flex;
     flex-direction: row;
+}
+
+.MuiCardActions-action-108.attack-btn {
+    margin-right: 200px;
+}
+
+.MuiPaper-root-13.MuiPaper-elevation2-17.MuiPaper-rounded-14.BattleRendering1-root-99 {
+    width: 320px;
 }

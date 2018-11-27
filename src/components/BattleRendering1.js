@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import './BattleRendering.css';
+import './BattleRendering1.css';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -16,6 +16,12 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import strong from '../imgs/strong.gif';
 import { Link } from 'react-router-dom'
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+
 
 const styles = theme => ({
     root: {
@@ -35,17 +41,29 @@ const styles = theme => ({
     },
 });
 
-class BattleRendering extends Component {
+class BattleRendering1 extends Component {
 
     state = {
         attack: 50,
         record: "Battle record",
         showModel: 1,
+        open: false,
+        win: false,
+        lose: false 
     };
 
 
     handleEscape = event => {
-        this.props.history.push('/Battle');
+        // this.props.history.push('/Battle');
+        this.setState({open: true});
+    }
+
+    handleClose = () => {
+        this.setState({ open: false });
+    }
+    
+    handleConfirmEscape = () => {
+         this.props.history.push('/Battle');
     }
 
     handleAttack = event => {
@@ -58,19 +76,20 @@ class BattleRendering extends Component {
             this.setState({ showModel: show })
         }
         else {
-            this.props.history.push('/card');
+            // this.props.history.push('/card');
+            this.setState({win: true})
         }
     };
 
     render() {
         const { classes } = this.props;
-        // const {name} = this.props.location.state
+        const {name} = this.props.location.state
 
 
         return (
 
             <div className="battle-container">
-                Battle！
+                Battle with {name} 
                 <div className="row1">
                     <Card className={classes.card}>
                         <CardActionArea>
@@ -85,15 +104,27 @@ class BattleRendering extends Component {
                             </div>
 
                         </CardActionArea>
-                        <CardActions>
-                            <Button size="small" color="primary" onClick={this.handleAttack}>
-                                attack
-
-                            </Button>
-                            <Button size="small" color="primary" onClick={this.handleEscape}>
-                                escape
-                            </Button>
+                        {
+                            this.state.win 
+                            ?
+                            <CardActions>
+                                <Button className="attack-btn" size="large" color="primary" onClick={()=>{this.props.history.push('/card')}}>
+                                    Yeah! Draw a card!
+                                </Button>
+                                <Button size="large" color="secondary" onClick={()=>{this.props.history.push('/dashboard')}}>
+                                    I don't want to draw a card.
+                                </Button>
+                            </CardActions>
+                            :
+                            <CardActions>
+                                <Button className="attack-btn" size="large" color="primary" onClick={this.handleAttack}>
+                                    Attack
+                                </Button>
+                                <Button className="escpape-btn" size="large" color="secondary" onClick={this.handleEscape}>
+                                    Escape
+                                </Button>
                         </CardActions>
+                        }
                     </Card>
 
                     <Paper className={classes.root}>
@@ -137,8 +168,37 @@ class BattleRendering extends Component {
                                     <ListItemText primary="you deal 10 DMG to Tom" />
                                 </ListItem>
                             }
+                            {this.state.win 
+                                ?
+                                <ListItem>
+                                    <ListItemText primary="Congrats! You win!" />
+                                </ListItem>
+                                :
+                                <div></div>
+                            }
                         </List>
                     </Paper>
+                    <Dialog
+                        open={this.state.open}
+                        onClose={this.handleClose}
+                        aria-labelledby="alert-dialog-title"
+                        aria-describedby="alert-dialog-description"
+                    >
+                    <DialogTitle id="alert-dialog-title">{" Are you sure that you want to escape?"}</DialogTitle>
+                    <DialogContent>
+                        <DialogContentText id="alert-dialog-description">
+                           You will lose this battle by escaping but this is a good strategy to avoid further damage!
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={this.handleClose} color="secondary" autoFocus >
+                        Cancel
+                        </Button>
+                        <Button onClick={this.handleConfirmEscape} color="primary">
+                        Yes, I want to escpape
+                        </Button>
+                    </DialogActions>
+                    </Dialog>
                 </div>
             </div>
 
@@ -146,8 +206,8 @@ class BattleRendering extends Component {
     }
 }
 
-BattleRendering.propTypes = {
+BattleRendering1.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(BattleRendering);
+export default withStyles(styles)(BattleRendering1);
