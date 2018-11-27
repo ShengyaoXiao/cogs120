@@ -128,7 +128,7 @@ class BattleRendering1 extends Component {
                     </Card>
 
                     <Paper className={classes.root}>
-                        <List component="nav">
+                        <List className="record"component="nav">
                             <ListItem>
                                 {/* <ListItemIcon>
                         

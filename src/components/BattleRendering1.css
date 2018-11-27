@@ -16,10 +16,11 @@
     flex-direction: row;
 }
 
-.MuiCardActions-action-87.attack-btn {
+
+button.attack-btn {
     margin-right: 200px;
 }
 
-.MuiPaper-root-13.MuiPaper-elevation2-17.MuiPaper-rounded-14.BattleRendering1-root-78 {
+nav.record {
     width: 320px;
 }
