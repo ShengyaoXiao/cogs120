@@ -83,7 +83,7 @@ class Dropdown extends React.Component {
                   <ClickAwayListener onClickAway={this.handleClose}>
                     <MenuList>
                       <MenuItem component={toDashboard}>Dashboard</MenuItem>
-                      <MenuItem component={toSetting}>Setting</MenuItem>
+                      {/* <MenuItem component={toSetting}>Setting</MenuItem> */}
                       <MenuItem component={toHomepage}>Logout</MenuItem>
                     </MenuList>
                   </ClickAwayListener>

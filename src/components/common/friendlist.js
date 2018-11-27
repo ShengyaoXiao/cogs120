@@ -95,19 +95,19 @@ class friendlist extends Component {
                                 className={classes.avatar}>J
             </Avatar>
                             <ListItemText primary="Jeff" secondary="Jan 9, 2014" />
-                            <Link to={{ pathname: './stats', state: { name: 'Jeff' } }}>
+                            {/* <Link to={{ pathname: './stats', state: { name: 'Jeff' } }}>
                                 <Button variant="fab" disabled aria-label="stats" className={classes.button}>
                                     <i className="fas fa-chart-bar"></i>
                                 </Button>
-                            </Link>
-                            <Link to={{ pathname: './battleRendering', state: { name: 'Jeff' } }}>
+                            </Link> */}
+                            {/* <Link to={{ pathname: './battleRendering', state: { name: 'Jeff' } }}>
                                 <Button variant="fab" disabled aria-label="battle" className={classes.button}>
                                     <i className="fas fa-gamepad"></i>
                                 </Button>
-                            </Link>
-                            <Button variant="fab" disabled aria-label="Delete" className={classes.button}>
+                            </Link> */}
+                            {/* <Button variant="fab" disabled aria-label="Delete" className={classes.button}>
                                 <DeleteIcon />
-                            </Button>
+                            </Button> */}
                         </ListItem>
                         <li>
                             <Divider inset />
@@ -118,7 +118,7 @@ class friendlist extends Component {
                                 className={classes.orangeAvatar}>T
             </Avatar>
                             <ListItemText primary="Tom" secondary="Jan 7, 2014" />
-                            <Link to={{ pathname: './stats', state: { name: 'Tom' } }}>
+                            {/* <Link to={{ pathname: './stats', state: { name: 'Tom' } }}>
                                 <Button variant="fab" disabled aria-label="stats" className={classes.button}>
                                     <i className="fas fa-chart-bar"></i>
                                 </Button>
@@ -130,7 +130,7 @@ class friendlist extends Component {
                             </Link>
                             <Button variant="fab" disabled aria-label="Delete" className={classes.button}>
                                 <DeleteIcon />
-                            </Button>
+                            </Button> */}
                         </ListItem>
 
                         <Divider inset component="li" />
@@ -139,7 +139,7 @@ class friendlist extends Component {
                                 className={classes.purpleAvatar}>J
           </Avatar>
                             <ListItemText primary="Jack" secondary="July 20, 2014" />
-                            <Link to={{ pathname: './stats', state: { name: 'Jack' } }}>
+                            {/* <Link to={{ pathname: './stats', state: { name: 'Jack' } }}>
                                 <Button variant="fab" disabled aria-label="stats" className={classes.button}>
                                     <i className="fas fa-chart-bar"></i>
                                 </Button>
@@ -151,7 +151,7 @@ class friendlist extends Component {
                             </Link>
                             <Button variant="fab" disabled aria-label="Delete" className={classes.button}>
                                 <DeleteIcon />
-                            </Button>
+                            </Button> */}
                         </ListItem>
 
 
@@ -161,7 +161,7 @@ class friendlist extends Component {
                                 className={classes.avatar}>PG
           </Avatar>
                             <ListItemText primary="Philip Guo" secondary="July 20, 2014" />
-                            <Link to={{ pathname: './stats', state: { name: 'Philip Guo' } }}>
+                            {/* <Link to={{ pathname: './stats', state: { name: 'Philip Guo' } }}>
                                 <Button variant="fab" disabled aria-label="stats" className={classes.button}>
                                     <i className="fas fa-chart-bar"></i>
                                 </Button>
@@ -173,7 +173,7 @@ class friendlist extends Component {
                             </Link>
                             <Button variant="fab" disabled aria-label="Delete" className={classes.button}>
                                 <DeleteIcon />
-                            </Button>
+                            </Button> */}
                         </ListItem>
                        
                         <Divider inset component="li" />
@@ -186,7 +186,7 @@ class friendlist extends Component {
                             <Avatar className={classes.orangeAvatar}>{this.state.initial} </Avatar>
 
                             <ListItemText primary={this.state.newfriend} secondary="July 20, 2014" />
-                            <Link to={{ pathname: './stats', state: { name: 'Philip Guo' } }}>
+                            {/* <Link to={{ pathname: './stats', state: { name: 'Philip Guo' } }}>
                                 <Button variant="fab" disabled aria-label="stats" className={classes.button}>
                                     <i className="fas fa-chart-bar"></i>
                                 </Button>
@@ -198,7 +198,7 @@ class friendlist extends Component {
                             </Link>
                             <Button variant="fab" disabled aria-label="Delete" className={classes.button}>
                                 <DeleteIcon />
-                            </Button>
+                            </Button> */}
                         </ListItem>
                         }                 
                    </List>
@@ -211,7 +211,7 @@ class friendlist extends Component {
                         <Tooltip title="Add" placement="right-start">
                             <Button onClick={this.handleAddfirend}>
                                 Add Friend
-                                    </Button>
+                            </Button>
                         </Tooltip>
                     </Grid>
                 </Grid>
