@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Friendlist from './common/friendlist';
 import Search from './common/Search';
+import SearchFriends from './common/SearchFriends';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -25,19 +26,7 @@ class Friends extends Component {
                     <div className="friends-list">
                         <Friendlist />
                     </div>
-                    <div className="friends-container">
-                        <div className="search-friend">
-                            <Search />
-                        </div>
-
-                        <Grid container justify="center">
-                            <Grid item>
-                                <Tooltip title="Add" placement="right-start">
-                                    <Button>Add Friend</Button>
-                                </Tooltip>
-                            </Grid>
-                        </Grid>
-                    </div>
+                  
                 </div>
             </div>
         );
