@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import monsterDemo from '../imgs/monster.gif';
+import monsterDemo from '../imgs/weapon_none_loop.gif';
 import './dashboard.css';
 import { Link } from 'react-router-dom'
 import Typography from '@material-ui/core/Typography';
