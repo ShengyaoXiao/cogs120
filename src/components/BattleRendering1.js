@@ -32,7 +32,7 @@ const styles = theme => ({
         minWidth: 400,
     },
     card: {
-        maxWidth: 500,
+        maxWidth: 700,
     },
     media: {
         // ⚠️ object-fit is not supported by IE 11.
