@@ -39,7 +39,7 @@ class BattleRendering extends Component {
 
     state = {
         attack: 50,
-        record: "Battle record",
+        record: "<--------------Battle record ------------->",
         showModel: 1,
     };
 
