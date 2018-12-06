@@ -10,18 +10,18 @@ import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
 
 const styles = {
-    root: {
-        width: 500,
-    },
+    // root: {
+    //     width: 00,
+    // },
 };
 
 class Friends extends Component {
 
     render() {
-        const { classes } = this.props;
+        // const { classes } = this.props;
         return (
             <div className="friends-container">
-                This is a friends page.
+                Friend List
                 <div className="friends-container-1">
                     <div className="friends-list">
                         <Friendlist />

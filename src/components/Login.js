@@ -3,26 +3,42 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import classNames from 'classnames';
 
 const styles = theme => ({
+    root: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        flexDirection: 'column',
+        alignItem: "center"
+    },
     container: {
       display: 'flex',
       flexWrap: 'wrap',
       flexDirection: 'column',
+      alignItem: "center"
     },
     textField: {
-      marginLeft: theme.spacing.unit,
-      marginRight: theme.spacing.unit,
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        marginBottom: theme.spacing.unit*2,
+        width: "300px"
     },
     dense: {
       marginTop: 16,
     },
     button: {
         margin: theme.spacing.unit,
+        width: "300px",
+        // fontSize: "16px"
       },
-    // menu: {
-    //   width: 200,
-    // },
+    confirm: {
+        color:"#fff",
+        backgroundColor: "#FFA06D",
+        '&:hover': {
+            backgroundColor: "#E89264",
+        },
+    },
 });
 
 class Login extends Component {
@@ -63,8 +79,8 @@ class Login extends Component {
     render() {
         const {classes} = this.props;
         return (
-            <div className="login-container">
-                 <div className="login-title" style={{textAlign: 'center'}}>Login</div>
+            <div className={classes.root}>
+                 <div className="login-title" style={{textAlign: 'center'}}>Login To Your Account</div>
                  <form className={classes.container} noValidate autoComplete="off" > 
                  <TextField
                     id="name-input"
@@ -89,9 +105,11 @@ class Login extends Component {
                     // error={this.state.passwordError}
                     onChange={this.handlePasswordInput('password')}
                 />
-                 <Button disabled={this.checkButtonStatus()} type="button" variant="contained" color="primary" onClick={this.handleSubmit}className={classes.button}>
+                <div>
+                 <Button disabled={this.checkButtonStatus()} type="button" variant="contained" onClick={this.handleSubmit} className={classNames(classes.button, classes.confirm)}>
                     Login 
                 </Button>
+                </div>
                 </form>
             </div>
         );

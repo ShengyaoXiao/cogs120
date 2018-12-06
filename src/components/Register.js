@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import classNames from 'classnames';
 
 const styles = theme => ({
     container: {
@@ -13,16 +14,24 @@ const styles = theme => ({
     textField: {
       marginLeft: theme.spacing.unit,
       marginRight: theme.spacing.unit,
+      marginBottom: theme.spacing.unit*2,
+      width: "300px",
+    //   fontSize: "16px"
     },
     dense: {
       marginTop: 16,
     },
     button: {
         margin: theme.spacing.unit,
+        fontSize: "16px"
       },
-    // menu: {
-    //   width: 200,
-    // },
+    confirm: {
+        color:"#fff",
+        backgroundColor: "#FFA06D",
+    '&:hover': {
+        backgroundColor: "#E89264",
+    },
+      },
 });
 
 class Register extends Component {
@@ -42,7 +51,7 @@ class Register extends Component {
         const {classes} = this.props;
         return (
             <div className="register-container">
-                 <div className="register-title">Create Your Account</div>
+                 <div className="register-title" style={{textAlign: 'center'}}>Create Your Account</div>
                  <form className={classes.container} noValidate autoComplete="off" > 
                  <TextField
                     id="name-input"
@@ -91,7 +100,7 @@ class Register extends Component {
                     // onChange={this.handlePasswordConfirm('confirmPassword')}
                     // error={this.state.confirmPasswordError}
                 />
-                 <Button type="button" variant="contained" color="primary" className={classes.button} onClick={this.handleSubmit}>
+                 <Button type="button" variant="contained" className={classNames(classes.button, classes.confirm)} onClick={this.handleSubmit}>
                     Sign up
                 </Button>
                 </form>

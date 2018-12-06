@@ -9,12 +9,20 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom'
+
 const styles = theme => ({
   root: {
     width: '100%',
     maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
   },
+  confirm: {
+    color:"#fff",
+    backgroundColor: "#FFA06D",
+    '&:hover': {
+        backgroundColor: "#E89264",
+    },
+},
 });
 
 class CheckboxListSecondary extends React.Component {
@@ -69,12 +77,10 @@ class CheckboxListSecondary extends React.Component {
               </ListItemSecondaryAction>
             </ListItem>
         </List>
-        <Link to="./stats">
-                        <Button>
-                            Confirm
-                            
-                        </Button>
-        </Link>
+        <Button variant="contained"className={classes.confirm}>
+            Confirm
+            
+        </Button>
       </div>
       
     );

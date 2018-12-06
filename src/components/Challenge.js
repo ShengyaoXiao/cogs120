@@ -13,9 +13,18 @@ import challengeimg from '../imgs/challenge.jpg';
 const styles = theme => ({
   root: {
     width: '100%',
-    maxWidth: 360,
+    maxWidth: 660,
     backgroundColor: theme.palette.background.paper,
   },
+  confirm: {
+    color:"#fff",
+    backgroundColor: "#FFA06D",
+    '&:hover': {
+        backgroundColor: "#E89264",
+    },
+    margin: theme.spacing.unit * 2
+    
+  }
 });
 
 class CheckboxListSecondary extends React.Component {
@@ -43,9 +52,9 @@ class CheckboxListSecondary extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.root}>
+      <div className={classes.root}style={{display:"flex", alignItems: "center", flexDirection: "column"}}>
       Check off the tasks that you have completed
-        <List dense>
+        <List >
             <ListItem challenge_1>
               <Avatar alt="challenge" src={challengeimg}/>
               <ListItemText primary={`Challenge 1: Push Up * 30`} />
@@ -71,11 +80,13 @@ class CheckboxListSecondary extends React.Component {
               </ListItemSecondaryAction>
             </ListItem>
         </List>
-        <Link to="./card">
-                <Button>
+        <div className="button-conatiner" style={{display:"flex", alignItems: "center"}}>
+        {/* <Link to="./card"> */}
+                <Button onClick={()=>{this.props.history.push("/card")}}className={classes.confirm}>
                     Confirm       
                 </Button>
-        </Link>
+        {/* </Link> */}
+        </div>
       </div>
       
     );
