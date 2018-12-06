@@ -27,7 +27,7 @@ class Battle extends Component {
             <div className="homepage-container">
                 This is a Battle. 
                 <div className="logo">Choose a random battle or battle with friends</div>
-                <Link to={{ pathname: './battleRendering', state: { name: 'a Random Player'} }}>
+                <Link to={{ pathname: './battleRendering1', state: { name: 'a Random Player'} }}>
                 <Button variant="outlined" color="secondary" className={classes.button}>Random battle</Button>
                 </Link>
                 <Button variant="outlined" onClick={this.handleFriends} color="primary" className={classes.button}>Friends battle</Button>

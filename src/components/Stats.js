@@ -13,7 +13,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import './stats.css';
-import monsterDemo from '../imgs/monster.gif';
+import monsterDemo from '../imgs/weapon_none_loop.gif';
 import Collection from './common/Collection';
 
 const option = {

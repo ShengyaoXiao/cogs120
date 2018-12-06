@@ -64,13 +64,13 @@ class BattleRendering extends Component {
 
     render() {
         const { classes } = this.props;
-        const {name} = this.props.location.state
+        // const {name} = this.props.location.state
 
 
         return (
 
             <div className="battle-container">
-                Battle with {name} 
+                Battle！
                 <div className="row1">
                     <Card className={classes.card}>
                         <CardActionArea>

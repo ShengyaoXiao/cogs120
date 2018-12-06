@@ -1,3 +1,4 @@
+
 .battle-container {
     color: #d8d8d0
 }
@@ -6,6 +7,7 @@
     flex-direction: row;
 }
 .bar-container{
+    width: 600px;
     display: flex;
     flex-direction: row-reverse;
 }
@@ -13,4 +15,13 @@
 .HP-bar{
     display: flex;
     flex-direction: row;
+}
+
+
+button.attack-btn {
+    margin-right: 200px;
+}
+
+nav.record {
+    width: 320px;
 }
