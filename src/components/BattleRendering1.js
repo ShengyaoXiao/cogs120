@@ -20,6 +20,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import classNames from 'classnames';
 
 
 const styles = theme => ({
@@ -37,6 +38,24 @@ const styles = theme => ({
     media: {
         // ⚠️ object-fit is not supported by IE 11.
         objectFit: 'cover',
+    },
+    button: {
+        marginRight: theme.spacing.unit * 45,
+      },
+    primary: {
+        color:"#FF6B6B",
+        backgroundColor: "#fff",
+        '&:hover': {
+            backgroundColor: "#E86262",
+            color: "#fff"
+        },
+      },
+      confirm: {
+        color:"#fff",
+        backgroundColor: "#FFA06D",
+        '&:hover': {
+            backgroundColor: "#E89264",
+        },
     },
 });
 
@@ -116,20 +135,20 @@ class BattleRendering1 extends Component {
                             this.state.win 
                             ?
                             <CardActions>
-                                <Button className="attack-btn" size="large" color="primary" onClick={()=>{this.props.history.push('/card')}}>
-                                    Yeah! Draw a card!
-                                </Button>
-                                <Button size="large" color="secondary" onClick={()=>{this.props.history.push('/dashboard')}}>
+                                <Button className="no-card-btn"size="large" color="secondary" onClick={()=>{this.props.history.push('/dashboard')}}>
                                     I don't want to draw a card.
+                                </Button>
+                                <Button className={classes.confirm} size="large" onClick={()=>{this.props.history.push('/card')}}>
+                                    Yeah! Draw a card!
                                 </Button>
                             </CardActions>
                             :
                             <CardActions>
-                                <Button className="attack-btn" size="large" color="primary" onClick={this.handleAttack}>
-                                    Attack
+                                <Button className="escape-btn" size="large" color="secondary"  onClick={this.handleEscape}>
+                                   Escape 
                                 </Button>
-                                <Button className="escpape-btn" size="large" color="secondary" onClick={this.handleEscape}>
-                                    Escape
+                                <Button size="large" className={classes.confirm} onClick={this.handleAttack}>
+                                    Attack
                                 </Button>
                         </CardActions>
                         }

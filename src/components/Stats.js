@@ -15,7 +15,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import './stats.css';
 import monsterDemo from '../imgs/weapon_none_loop.gif';
 import Collection from './common/Collection';
-
 const option = {
     title: {
         text: 'Composition'
@@ -58,10 +57,13 @@ const styles = theme => ({
     root: {
       flexGrow: 1,
       backgroundColor: theme.palette.background.paper,
-      maxWidth: 360,
+      maxWidth: 400,
+      maxHeight: 300,
+      width: 400,
+      height: 300
     },
     table: {
-        minWidth: 300,
+        minWidth: 320,
       },
   });
 
@@ -93,10 +95,13 @@ class Stats extends Component {
                 <br/><br/><br/><br/>
                 <div className="row1">
                     <div className="stats-profile-container">
-                        <img src={monsterDemo} alt="monster"/>
-                        <div className="progress-bar">
-                        <span>EXP: </span><progress value="38" max="50"></progress><span>Lv 38</span>
-                        </div>
+                        <img style={{width: "220px", height: "165px"}} src={monsterDemo} alt="monster"/>
+                        <div class="progress shine" data-width="30%">
+                        <div class="progress-text">EXP 80%</div>
+                        <div class="progress-bar">
+                        <div class="progress-text">EXP 80%</div>
+                    </div>
+                    </div>
                     </div>
                     <div className="stats-info-container">
                         <div>Name: Yoshi</div>
@@ -110,7 +115,7 @@ class Stats extends Component {
                             option={option}
                             notMerge={true}
                             lazyUpdate={true}
-                            theme={"dark"}
+                            // theme={"dark"}
                         />
                     </div>
                     <div className="table-container">
@@ -142,27 +147,31 @@ class Stats extends Component {
                 </div>
                 <div className="row3">
                 <div className="stats-collection-container">
+                    Item Collection
                     <Collection />
                 </div>
+                <div>
+                Firend Stats
                 <Paper className={classes.root}>
                     <List component="nav">
                         <ListItem>
-                            <ListItemText primary="Chelsea Otakan" />
+                            <ListItemText primary="Jeff" />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Eric Hoffman" />
+                            <ListItemText primary="Tom" />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Eric Hoffman" />
+                            <ListItemText primary="Jack" />
                         </ListItem>
                         <ListItem>
-                            <ListItemText primary="Eric Hoffman" />
+                            <ListItemText primary="Philip Guo" />
                         </ListItem>
                         <ListItem>
                             <ListItemText primary="Eric Hoffman" />
                         </ListItem>
                     </List>
                 </Paper>
+                </div>
                 </div>
             </div>
         );

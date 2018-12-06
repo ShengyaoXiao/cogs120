@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Dropdown from './Dropdown';
 import { Link } from 'react-router-dom'
 import MenuItem from '@material-ui/core/MenuItem';
+import Logo from "../../imgs/logo.png";
 
 const toDashboard = props => <Link to="./dashboard" {...props} />
 const styles = {
@@ -20,6 +21,15 @@ const styles = {
       marginLeft: -12,
       marginRight: 20,
     },
+    menuItem: {
+        fontFamily: "'Montserrat',sans-serif",
+        fontSize: "18px",
+        textTransform: "uppercase",
+        letterSpacing: "1px",
+        fontWeight: "700",
+        lineHeight: "1em",
+        color: "#333",
+    }
   };
 
   class Navbar extends Component {
@@ -48,14 +58,18 @@ const styles = {
       return (
           <div className={classes.root}>
               {/* App bar */}
-              <AppBar position = 'fixed'>
+              <div className="nav-bar">
+              <AppBar style={{backgroundColor: "#FFE66D"}}position = 'fixed'>
                   <Toolbar>
                         <Dropdown />
-                        <MenuItem component={toDashboard} >
-                            Budokan 
+                        <MenuItem className={classes.menuItem}component={toDashboard} >
+                        <img style={{width:"15px", height:"16px", marginRight:"4px"}}alt="logo"src={Logo}/>
+                           Monster Fighter 
+                           {/* <img style={{width:"15px", height:"16px"}}alt="logo"src={Logo}/> */}
                         </MenuItem>
                   </Toolbar>
               </AppBar>
+              </div>
           </div>
       );
     }

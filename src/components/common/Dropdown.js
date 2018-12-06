@@ -84,7 +84,10 @@ class Dropdown extends React.Component {
                     <MenuList>
                       <MenuItem component={toDashboard}>Dashboard</MenuItem>
                       {/* <MenuItem component={toSetting}>Setting</MenuItem> */}
-                      <MenuItem component={toHomepage}>Logout</MenuItem>
+                      <MenuItem onClick={()=>{
+                        localStorage.removeItem("usernmae");
+                        localStorage.removeItem("items");
+                      }}component={toHomepage}>Logout</MenuItem>
                     </MenuList>
                   </ClickAwayListener>
                 </Paper>
