@@ -10,11 +10,10 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import strong from '../imgs/strong.gif';
+import strong from '../imgs/battle_loop.gif';
+import attackonce from '../imgs/attackultrafast.gif';
 import { Link } from 'react-router-dom'
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -33,7 +32,7 @@ const styles = theme => ({
         minWidth: 400,
     },
     card: {
-        maxWidth: 500,
+        maxWidth: 700,
     },
     media: {
         // ⚠️ object-fit is not supported by IE 11.
@@ -44,6 +43,7 @@ const styles = theme => ({
 class BattleRendering1 extends Component {
 
     state = {
+        img: strong,
         attack: 50,
         record: "Battle record",
         showModel: 1,
@@ -66,9 +66,11 @@ class BattleRendering1 extends Component {
          this.props.history.push('/Battle');
     }
 
+
     handleAttack = event => {
         var temp = this.state.attack - 10;
         var show = this.state.showModel + 1;
+        this.setState({img:attackonce});
 //        var newRecord = this.state.record + "/n" + "you deal 10 DMG to Tom";
         if (temp > 0) {
             this.setState({ attack: temp });
@@ -79,7 +81,12 @@ class BattleRendering1 extends Component {
             // this.props.history.push('/card');
             this.setState({win: true})
         }
+        setTimeout(this.finishAttack,350);
     };
+
+    finishAttack =event=>{
+        this.setState({img:strong});
+    }
 
     render() {
         const { classes } = this.props;
@@ -98,12 +105,13 @@ class BattleRendering1 extends Component {
                                     <span>Opponent HP: </span><progress value={this.state.attack} max="50"></progress>
                                 </div>
                             </div>
-                            <img src={strong} alt="monster" />
+                            <img src={this.state.img} alt="monster" />
                             <div className="HP-bar2">
                                 <span>Your HP: </span><progress value="50" max="50"></progress>
                             </div>
 
                         </CardActionArea>
+
                         {
                             this.state.win 
                             ?
@@ -141,7 +149,7 @@ class BattleRendering1 extends Component {
                                     <div></div>
                                     :
                                     <ListItem>
-                                        <ListItemText primary="you punched Tom and done 10 DMG" />
+                                        <ListItemText primary="you punched opponent and done 10 DMG" />
                                     </ListItem>
                             }
                             {this.state.showModel <= 2
@@ -149,7 +157,7 @@ class BattleRendering1 extends Component {
                                 <div></div>
                                 :
                                 <ListItem>
-                                    <ListItemText primary="you slapped Tom in the face -10 HP" />
+                                    <ListItemText primary="you slapped opponent in the face -10 HP" />
                                 </ListItem>
                             }
                             {this.state.showModel <= 3
@@ -157,7 +165,7 @@ class BattleRendering1 extends Component {
                                 <div></div>
                                 :
                                 <ListItem>
-                                    <ListItemText primary="you kick Tom's stomach done 10 DMG" />
+                                    <ListItemText primary="you kick opponent's stomach done 10 DMG" />
                                 </ListItem>
                             }
                             {this.state.showModel <= 4
@@ -165,7 +173,7 @@ class BattleRendering1 extends Component {
                                 <div></div>
                                 :
                                 <ListItem>
-                                    <ListItemText primary="you deal 10 DMG to Tom" />
+                                    <ListItemText primary="you deal 10 DMG to opponent" />
                                 </ListItem>
                             }
                             {this.state.win 
