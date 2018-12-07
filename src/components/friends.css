@@ -23,6 +23,7 @@
     flex-direction: row;
 }
 .friends-container-2{
+    width:300px;
     display: flex;
 }
 .search-friend{

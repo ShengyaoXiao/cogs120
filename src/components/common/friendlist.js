@@ -100,11 +100,11 @@ class friendlist extends Component {
                                     <i className="fas fa-chart-bar"></i>
                                 </Button>
                             </Link> */}
-                            {/* <Link to={{ pathname: './battleRendering', state: { name: 'Jeff' } }}>
+                            {<Link to={{ pathname: './battleRendering1', state: { name: 'Jeff' } }}>
                                 <Button variant="fab" disabled aria-label="battle" className={classes.button}>
                                     <i className="fas fa-gamepad"></i>
                                 </Button>
-                            </Link> */}
+                            </Link> }
                             {/* <Button variant="fab" disabled aria-label="Delete" className={classes.button}>
                                 <DeleteIcon />
                             </Button> */}
@@ -123,11 +123,13 @@ class friendlist extends Component {
                                     <i className="fas fa-chart-bar"></i>
                                 </Button>
                             </Link>
-                            <Link to={{ pathname: './battleRendering', state: { name: 'Tom' } }}>
+                            */
+                            <Link to={{ pathname: './battleRendering1', state: { name: 'Tom' } }}>
                                 <Button variant="fab" disabled aria-label="battle" className={classes.button}>
                                     <i className="fas fa-gamepad"></i>
                                 </Button>
                             </Link>
+                            /*
                             <Button variant="fab" disabled aria-label="Delete" className={classes.button}>
                                 <DeleteIcon />
                             </Button> */}
@@ -143,12 +145,13 @@ class friendlist extends Component {
                                 <Button variant="fab" disabled aria-label="stats" className={classes.button}>
                                     <i className="fas fa-chart-bar"></i>
                                 </Button>
-                            </Link>
-                            <Link to={{ pathname: './battleRendering', state: { name: 'Jack' } }}>
+                            </Link>*/
+                            <Link to={{ pathname: './battleRendering1', state: { name: 'Jack' } }}>
                                 <Button variant="fab" disabled aria-label="battle" className={classes.button}>
                                     <i className="fas fa-gamepad"></i>
                                 </Button>
                             </Link>
+                            /*
                             <Button variant="fab" disabled aria-label="Delete" className={classes.button}>
                                 <DeleteIcon />
                             </Button> */}
@@ -165,12 +168,13 @@ class friendlist extends Component {
                                 <Button variant="fab" disabled aria-label="stats" className={classes.button}>
                                     <i className="fas fa-chart-bar"></i>
                                 </Button>
-                            </Link>
-                            <Link to={{ pathname: './battleRendering', state: { name: 'Philip Guo' } }}>
+                            </Link>*/
+                            <Link to={{ pathname: './battleRendering1', state: { name: 'Philip Guo' } }}>
                                 <Button variant="fab" disabled aria-label="battle" className={classes.button}>
                                     <i className="fas fa-gamepad"></i>
                                 </Button>
                             </Link>
+                            /*
                             <Button variant="fab" disabled aria-label="Delete" className={classes.button}>
                                 <DeleteIcon />
                             </Button> */}
@@ -190,12 +194,13 @@ class friendlist extends Component {
                                 <Button variant="fab" disabled aria-label="stats" className={classes.button}>
                                     <i className="fas fa-chart-bar"></i>
                                 </Button>
-                            </Link>
-                            <Link to={{ pathname: './battleRendering', state: { name: 'Philip Guo' } }}>
+                            </Link>*/
+                            <Link to={{ pathname: './battleRendering1', state: { name: 'Philip Guo' } }}>
                                 <Button variant="fab" disabled aria-label="battle" className={classes.button}>
                                     <i className="fas fa-gamepad"></i>
                                 </Button>
                             </Link>
+                            /*
                             <Button variant="fab" disabled aria-label="Delete" className={classes.button}>
                                 <DeleteIcon />
                             </Button> */}
@@ -203,6 +208,7 @@ class friendlist extends Component {
                         }                 
                    </List>
                 </div>
+                <div className="friends-container-1">
                 <div className="friends-container-2">
                     <Search />
                 </div>
@@ -215,6 +221,7 @@ class friendlist extends Component {
                         </Tooltip>
                     </Grid>
                 </Grid>
+                </div>
             </div>
         );
     }

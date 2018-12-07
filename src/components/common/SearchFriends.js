@@ -185,7 +185,7 @@ class IntegrationAutosuggest extends React.Component {
           {...autosuggestProps}
           inputProps={{
             classes,
-            placeholder: '      Search here (start with a)',
+            placeholder: '      Search',
             value: this.state.single,
             onChange: this.handleChange('single'),            
           }}
