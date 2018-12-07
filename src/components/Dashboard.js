@@ -3,7 +3,7 @@ import monsterDemo from '../imgs/weapon_none_loop.gif';
 import './dashboard.css';
 import { Link } from 'react-router-dom'
 import Typography from '@material-ui/core/Typography';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 class Dashboard extends Component {
     toChallenge = () => {
